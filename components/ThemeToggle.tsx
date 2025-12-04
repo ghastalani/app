@@ -28,7 +28,7 @@ export default function ThemeToggle() {
     // Prevent hydration mismatch
     if (!mounted) {
         return (
-            <div className="w-14 h-7 rounded-full bg-gray-200 dark:bg-gray-700 relative">
+            <div className="w-14 h-7 rounded-full bg-[rgba(var(--text-tertiary),0.2)] relative">
                 <div className="w-5 h-5 rounded-full bg-white absolute top-1 left-1" />
             </div>
         );
@@ -37,9 +37,9 @@ export default function ThemeToggle() {
     return (
         <button
             onClick={toggleTheme}
-            className="relative w-14 h-7 rounded-full transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
+            className="relative w-14 h-7 rounded-full transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-[rgb(var(--primary-color))] focus:ring-offset-2"
             style={{
-                backgroundColor: theme === 'dark' ? 'rgb(55, 65, 81)' : 'rgb(209, 213, 219)',
+                backgroundColor: theme === 'dark' ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.1)',
             }}
             aria-label="Toggle theme"
         >
@@ -50,7 +50,7 @@ export default function ThemeToggle() {
                 }}
             >
                 {theme === 'dark' ? (
-                    <Moon className="w-3 h-3 text-gray-700" />
+                    <Moon className="w-3 h-3 text-[rgb(var(--primary-color))]" />
                 ) : (
                     <Sun className="w-3 h-3 text-yellow-500" />
                 )}

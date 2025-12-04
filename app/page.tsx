@@ -1,158 +1,144 @@
 'use client';
 
 import React from 'react';
-import { ExternalLink, Leaf, Users, TrendingUp, Award } from 'lucide-react';
+import { ExternalLink, Leaf, Users, TrendingUp, Award, Sparkles, ArrowRight } from 'lucide-react';
 import ThemeToggle from '../components/ThemeToggle';
 
 export default function RSEByDesign() {
   const sections = [
     {
       id: 'definition',
-      icon: <Leaf className="w-8 h-8" />,
+      icon: <Leaf className="w-6 h-6" />,
       title: "Qu'est-ce que le RSE ?",
-      description: "La Responsabilité Sociale des Entreprises (RSE) désigne l'intégration volontaire par les entreprises de préoccupations sociales et environnementales dans leurs activités commerciales et leurs relations avec les parties prenantes. Elle vise à créer un impact positif sur la société tout en maintenant la viabilité économique.",
+      description:
+        "L'intégration volontaire de préoccupations sociales et environnementales. Un impact positif sur la société tout en maintenant la viabilité économique.",
       link: "https://www.iso.org/fr/iso-26000-social-responsibility.html",
-      linkText: "En savoir plus sur ISO 26000"
+      linkText: "ISO 26000",
     },
     {
       id: 'importance',
-      icon: <Users className="w-8 h-8" />,
-      title: "L'importance de la responsabilité sociale des entreprises",
-      description: "La RSE est devenue cruciale pour les entreprises modernes. Elle améliore la réputation, attire les talents, renforce la fidélité des clients et crée de la valeur à long terme. Les entreprises responsables sont mieux positionnées pour gérer les risques, innover et contribuer positivement à la société.",
+      icon: <Users className="w-6 h-6" />,
+      title: "Pourquoi c'est crucial ?",
+      description:
+        "Améliore la réputation, attire les talents et crée de la valeur. Les entreprises responsables innovent et contribuent positivement au monde.",
       link: "https://www.un.org/sustainabledevelopment/fr/",
-      linkText: "Objectifs de développement durable de l'ONU"
+      linkText: "Objectifs ONU",
     },
     {
       id: 'impact',
-      icon: <TrendingUp className="w-8 h-8" />,
-      title: "L'impact de la durabilité sur l'environnement et la société",
-      description: "La durabilité transforme notre approche des affaires en réduisant l'empreinte carbone, en préservant les ressources naturelles et en promouvant l'équité sociale. Les pratiques durables créent des emplois verts, améliorent la santé publique et assurent un avenir viable pour les générations futures.",
+      icon: <TrendingUp className="w-6 h-6" />,
+      title: "Impact Durable",
+      description:
+        "Réduire l'empreinte carbone et promouvoir l'équité. Des emplois verts et un avenir viable pour les générations futures.",
       link: "https://ec.europa.eu/environment/index_fr.htm",
-      linkText: "Commission européenne - Environnement"
+      linkText: "Commission UE",
     },
     {
       id: 'exemples',
-      icon: <Award className="w-8 h-8" />,
-      title: "Exemples de projets RSE réussis",
-      description: "De nombreuses entreprises ont mis en œuvre des initiatives RSE remarquables : programmes de réduction des déchets, investissements dans les énergies renouvelables, projets d'inclusion sociale, et partenariats avec des ONG. Ces exemples démontrent qu'il est possible de concilier rentabilité et responsabilité sociale.",
+      icon: <Award className="w-6 h-6" />,
+      title: "Réussites",
+      description:
+        "Programmes zéro déchet, énergies renouvelables et inclusion. La preuve que rentabilité et responsabilité vont de pair.",
       link: "https://www.entreprises.gouv.fr/fr/responsabilite-sociale-des-entreprises",
-      linkText: "Exemples et ressources gouvernementales"
-    }
+      linkText: "Exemples Gouv",
+    },
   ];
 
   return (
-    <div className="min-h-screen transition-colors duration-300">
-      {/* Header */}
-      <header className="shadow-md sticky top-0 z-50 transition-colors duration-300" style={{ backgroundColor: `rgb(var(--header-bg))` }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-3">
-              <div className="bg-gradient-to-br from-emerald-500 to-teal-600 p-3 rounded-xl shadow-lg">
-                <Leaf className="w-8 h-8 text-white" />
-              </div>
-              <h1 className="text-4xl font-bold bg-gradient-to-r from-emerald-600 to-teal-700 bg-clip-text text-transparent">
-                RSE by Design
-              </h1>
+    <div className="min-h-screen font-sans selection:bg-[rgb(var(--secondary-color))] selection:text-white overflow-hidden">
+
+      {/* Decorative Background Elements */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden -z-10">
+        <div className="absolute top-[-10%] left-[-10%] w-[40vw] h-[40vw] rounded-full bg-[rgb(var(--primary-color))] opacity-[0.03] blur-3xl animate-float" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[35vw] h-[35vw] rounded-full bg-[rgb(var(--secondary-color))] opacity-[0.03] blur-3xl animate-float-delayed" />
+      </div>
+
+      {/* Compact Floating Navbar */}
+      <header className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-[90%] max-w-4xl">
+        <div className="glass-panel rounded-full px-6 py-3 flex items-center justify-between shadow-lg shadow-[rgba(var(--primary-color),0.1)] transition-all duration-300 hover:shadow-xl">
+          <div className="flex items-center space-x-3">
+            <div className="bg-gradient-to-br from-[rgb(var(--primary-color))] to-[rgb(var(--secondary-color))] p-1.5 rounded-full shadow-md animate-pulse">
+              <Sparkles className="w-4 h-4 text-white" />
             </div>
-            <ThemeToggle />
+            <h1 className="text-sm font-bold tracking-wide uppercase bg-gradient-to-r from-[rgb(var(--primary-color))] to-[rgb(var(--secondary-color))] bg-clip-text text-transparent">
+              RSE by Design
+            </h1>
           </div>
-          <p className="mt-3 text-lg max-w-3xl transition-colors duration-300" style={{ color: `rgb(var(--text-secondary))` }}>
-            Conception et mise en œuvre de stratégies de responsabilité sociale pour un avenir durable
-          </p>
+          <ThemeToggle />
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="bg-gradient-to-r from-emerald-600 to-teal-700 rounded-3xl shadow-2xl p-12 text-white">
-          <h2 className="text-5xl font-bold mb-6">
-            Construire un avenir responsable
+      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center relative">
+        <div className="animate-fade-in-up">
+          <span className="inline-block py-1 px-3 rounded-full bg-[rgba(var(--primary-color),0.1)] text-[rgb(var(--primary-color))] text-xs font-bold tracking-wider mb-6 border border-[rgba(var(--primary-color),0.2)]">
+            NOUVELLE ÈRE
+          </span>
+          <h2 className="text-4xl sm:text-6xl font-extrabold mb-6 tracking-tight leading-tight">
+            Construire un <br />
+            <span className="bg-gradient-to-r from-[rgb(var(--primary-color))] via-[rgb(var(--secondary-color))] to-[rgb(var(--accent-color))] bg-clip-text text-transparent">
+              Avenir Responsable
+            </span>
           </h2>
-          <p className="text-xl text-emerald-50 max-w-3xl leading-relaxed">
-            RSE by Design vous accompagne dans la transformation de votre entreprise
-            vers des pratiques plus durables et socialement responsables. Ensemble,
-            créons un impact positif pour votre organisation et la société.
+          <p className="text-lg sm:text-xl text-[rgb(var(--text-secondary))] max-w-2xl mx-auto leading-relaxed mb-10">
+            Transformez votre entreprise avec des pratiques durables.
+            Créez un impact positif pour votre organisation et la société.
           </p>
         </div>
       </section>
 
-      {/* Main Content Sections */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
-        {sections.map((section, index) => (
-          <article
-            key={section.id}
-            className="rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
-            style={{ backgroundColor: `rgb(var(--card-bg))` }}
-          >
-            <div className="p-8 sm:p-10">
-              <div className="flex items-start space-x-4 mb-6">
-                <div className="bg-gradient-to-br from-emerald-100 to-teal-100 p-4 rounded-xl flex-shrink-0">
-                  <div className="text-emerald-700">
+      {/* Main Content Grid */}
+      <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {sections.map((section, index) => (
+            <article
+              key={section.id}
+              className={`glass-panel rounded-3xl p-6 sm:p-8 hover:scale-[1.02] transition-all duration-300 group cursor-default animate-fade-in-up`}
+              style={{ animationDelay: `${index * 100 + 200}ms` }}
+            >
+              <div className="flex items-start justify-between mb-4">
+                <div className="bg-gradient-to-br from-[rgba(var(--primary-color),0.1)] to-[rgba(var(--secondary-color),0.1)] p-3 rounded-2xl group-hover:rotate-6 transition-transform duration-300">
+                  <div style={{ color: 'rgb(var(--primary-color))' }}>
                     {section.icon}
                   </div>
                 </div>
-                <div className="flex-1">
-                  <h3 className="text-3xl font-bold mb-4 transition-colors duration-300" style={{ color: `rgb(var(--text-primary))` }}>
-                    {section.title}
-                  </h3>
-                  <p className="text-lg leading-relaxed transition-colors duration-300" style={{ color: `rgb(var(--text-secondary))` }}>
-                    {section.description}
-                  </p>
-                </div>
-              </div>
-
-              <div className="mt-6 flex justify-start">
                 <a
                   href={section.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center space-x-2 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-semibold px-6 py-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+                  className="text-[rgb(var(--text-tertiary))] hover:text-[rgb(var(--secondary-color))] transition-colors p-2"
                 >
-                  <span>{section.linkText}</span>
-                  <ExternalLink className="w-5 h-5" />
+                  <ExternalLink className="w-4 h-4" />
                 </a>
               </div>
-            </div>
-          </article>
-        ))}
+
+              <h3 className="text-xl font-bold mb-3" style={{ color: 'rgb(var(--text-primary))' }}>
+                {section.title}
+              </h3>
+              <p className="text-sm leading-relaxed mb-6" style={{ color: 'rgb(var(--text-secondary))' }}>
+                {section.description}
+              </p>
+
+              <a
+                href={section.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-xs font-bold uppercase tracking-wider group/link"
+                style={{ color: 'rgb(var(--primary-color))' }}
+              >
+                <span>{section.linkText}</span>
+                <ArrowRight className="w-3 h-3 ml-1 transform group-hover/link:translate-x-1 transition-transform" />
+              </a>
+            </article>
+          ))}
+        </div>
       </main>
 
-      {/* Footer */}
-      <footer className="text-white mt-20 transition-colors duration-300" style={{ backgroundColor: `rgb(var(--footer-bg))` }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <h4 className="text-xl font-bold mb-4 flex items-center space-x-2">
-                <Leaf className="w-6 h-6 text-emerald-400" />
-                <span>RSE by Design</span>
-              </h4>
-              <p className="text-gray-400">
-                Votre partenaire pour une transformation durable et responsable.
-              </p>
-            </div>
-
-            <div>
-              <h5 className="text-lg font-semibold mb-4">Ressources</h5>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#definition" className="hover:text-emerald-400 transition-colors">RSE définition</a></li>
-                <li><a href="#importance" className="hover:text-emerald-400 transition-colors">Importance</a></li>
-                <li><a href="#impact" className="hover:text-emerald-400 transition-colors">Impact</a></li>
-                <li><a href="#exemples" className="hover:text-emerald-400 transition-colors">Exemples</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h5 className="text-lg font-semibold mb-4">Contact</h5>
-              <p className="text-gray-400">
-                Contactez-nous pour en savoir plus sur nos services et comment nous pouvons vous aider.
-              </p>
-            </div>
-          </div>
-
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 RSE by Design. Tous droits réservés.</p>
-          </div>
-        </div>
+      {/* Minimal Footer */}
+      <footer className="text-center py-12 border-t border-[rgba(var(--card-border),0.3)] relative z-10">
+        <p className="text-sm" style={{ color: 'rgb(var(--text-tertiary))' }}>
+          © 2024 RSE by Design. <span className="opacity-50">Fait avec passion.</span>
+        </p>
       </footer>
     </div>
   );

@@ -3,59 +3,132 @@
 /* Light theme (default) */
 :root {
   --bg-primary: 255, 255, 255;
-  --bg-secondary: 249, 250, 251;
-  --bg-gradient-start: 236, 253, 245;
-  --bg-gradient-mid: 240, 253, 250;
-  --bg-gradient-end: 236, 254, 255;
+  --bg-secondary: 250, 245, 255;
+  /* Light violet tint */
+  --bg-gradient-start: 245, 243, 255;
+  --bg-gradient-mid: 237, 233, 254;
+  --bg-gradient-end: 253, 242, 248;
+  /* Pinkish end */
 
-  --text-primary: 17, 24, 39;
-  --text-secondary: 75, 85, 99;
-  --text-tertiary: 156, 163, 175;
+  --text-primary: 30, 27, 75;
+  /* Deep indigo */
+  --text-secondary: 76, 29, 149;
+  /* Rich violet */
+  --text-tertiary: 107, 114, 128;
 
   --card-bg: 255, 255, 255;
-  --card-border: 229, 231, 235;
+  --card-border: 221, 214, 254;
 
   --header-bg: 255, 255, 255;
   --footer-bg: 17, 24, 39;
 
-  --emerald-primary: 16, 185, 129;
-  --teal-primary: 20, 184, 166;
+  --primary-color: 124, 58, 237;
+  /* Violet 600 */
+  --secondary-color: 219, 39, 119;
+  /* Pink 600 */
+  --accent-color: 14, 165, 233;
+  /* Sky 500 */
 }
 
 /* Dark theme */
 [data-theme="dark"] {
-  --bg-primary: 17, 24, 39;
-  --bg-secondary: 31, 41, 55;
-  --bg-gradient-start: 17, 24, 39;
-  --bg-gradient-mid: 31, 41, 55;
-  --bg-gradient-end: 55, 65, 81;
+  --bg-primary: 15, 23, 42;
+  --bg-secondary: 30, 41, 59;
+  --bg-gradient-start: 15, 23, 42;
+  --bg-gradient-mid: 23, 37, 84;
+  --bg-gradient-end: 49, 46, 129;
 
   --text-primary: 243, 244, 246;
-  --text-secondary: 209, 213, 219;
-  --text-tertiary: 156, 163, 175;
+  --text-secondary: 199, 210, 254;
+  --text-tertiary: 148, 163, 184;
 
-  --card-bg: 31, 41, 55;
-  --card-border: 55, 65, 81;
+  --card-bg: 30, 41, 59;
+  --card-border: 49, 46, 129;
 
-  --header-bg: 31, 41, 55;
-  --footer-bg: 17, 24, 39;
+  --header-bg: 15, 23, 42;
+  --footer-bg: 2, 6, 23;
 
-  --emerald-primary: 52, 211, 153;
-  --teal-primary: 45, 212, 191;
+  --primary-color: 167, 139, 250;
+  /* Violet 400 */
+  --secondary-color: 244, 114, 182;
+  /* Pink 400 */
+  --accent-color: 56, 189, 248;
+  /* Sky 400 */
 }
 
 body {
   color: rgb(var(--text-primary));
-  background: linear-gradient(to bottom right,
+  background: linear-gradient(135deg,
       rgb(var(--bg-gradient-start)),
       rgb(var(--bg-gradient-mid)),
       rgb(var(--bg-gradient-end)));
+  background-attachment: fixed;
   min-height: 100vh;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1), color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-x: hidden;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .glass-panel {
+    background: rgba(var(--card-bg), 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(var(--card-border), 0.5);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-float-delayed {
+    animation: float 6s ease-in-out 3s infinite;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
