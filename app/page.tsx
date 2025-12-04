@@ -1,5 +1,8 @@
+'use client';
+
 import React from 'react';
 import { ExternalLink, Leaf, Users, TrendingUp, Award } from 'lucide-react';
+import ThemeToggle from '../components/ThemeToggle';
 
 export default function RSEByDesign() {
   const sections = [
@@ -38,19 +41,22 @@ export default function RSEByDesign() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50">
+    <div className="min-h-screen transition-colors duration-300">
       {/* Header */}
-      <header className="bg-white shadow-md sticky top-0 z-50">
+      <header className="shadow-md sticky top-0 z-50 transition-colors duration-300" style={{ backgroundColor: `rgb(var(--header-bg))` }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex items-center space-x-3">
-            <div className="bg-gradient-to-br from-emerald-500 to-teal-600 p-3 rounded-xl shadow-lg">
-              <Leaf className="w-8 h-8 text-white" />
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-3">
+              <div className="bg-gradient-to-br from-emerald-500 to-teal-600 p-3 rounded-xl shadow-lg">
+                <Leaf className="w-8 h-8 text-white" />
+              </div>
+              <h1 className="text-4xl font-bold bg-gradient-to-r from-emerald-600 to-teal-700 bg-clip-text text-transparent">
+                RSE by Design
+              </h1>
             </div>
-            <h1 className="text-4xl font-bold bg-gradient-to-r from-emerald-600 to-teal-700 bg-clip-text text-transparent">
-              RSE by Design
-            </h1>
+            <ThemeToggle />
           </div>
-          <p className="mt-3 text-gray-600 text-lg max-w-3xl">
+          <p className="mt-3 text-lg max-w-3xl transition-colors duration-300" style={{ color: `rgb(var(--text-secondary))` }}>
             Conception et mise en œuvre de stratégies de responsabilité sociale pour un avenir durable
           </p>
         </div>
@@ -63,8 +69,8 @@ export default function RSEByDesign() {
             Construire un avenir responsable
           </h2>
           <p className="text-xl text-emerald-50 max-w-3xl leading-relaxed">
-            RSE by Design vous accompagne dans la transformation de votre entreprise 
-            vers des pratiques plus durables et socialement responsables. Ensemble, 
+            RSE by Design vous accompagne dans la transformation de votre entreprise
+            vers des pratiques plus durables et socialement responsables. Ensemble,
             créons un impact positif pour votre organisation et la société.
           </p>
         </div>
@@ -73,9 +79,10 @@ export default function RSEByDesign() {
       {/* Main Content Sections */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
         {sections.map((section, index) => (
-          <article 
+          <article
             key={section.id}
-            className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+            className="rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+            style={{ backgroundColor: `rgb(var(--card-bg))` }}
           >
             <div className="p-8 sm:p-10">
               <div className="flex items-start space-x-4 mb-6">
@@ -85,15 +92,15 @@ export default function RSEByDesign() {
                   </div>
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                  <h3 className="text-3xl font-bold mb-4 transition-colors duration-300" style={{ color: `rgb(var(--text-primary))` }}>
                     {section.title}
                   </h3>
-                  <p className="text-gray-700 text-lg leading-relaxed">
+                  <p className="text-lg leading-relaxed transition-colors duration-300" style={{ color: `rgb(var(--text-secondary))` }}>
                     {section.description}
                   </p>
                 </div>
               </div>
-              
+
               <div className="mt-6 flex justify-start">
                 <a
                   href={section.link}
@@ -111,7 +118,7 @@ export default function RSEByDesign() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white mt-20">
+      <footer className="text-white mt-20 transition-colors duration-300" style={{ backgroundColor: `rgb(var(--footer-bg))` }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
@@ -123,7 +130,7 @@ export default function RSEByDesign() {
                 Votre partenaire pour une transformation durable et responsable.
               </p>
             </div>
-            
+
             <div>
               <h5 className="text-lg font-semibold mb-4">Ressources</h5>
               <ul className="space-y-2 text-gray-400">
@@ -133,7 +140,7 @@ export default function RSEByDesign() {
                 <li><a href="#exemples" className="hover:text-emerald-400 transition-colors">Exemples</a></li>
               </ul>
             </div>
-            
+
             <div>
               <h5 className="text-lg font-semibold mb-4">Contact</h5>
               <p className="text-gray-400">
@@ -141,7 +148,7 @@ export default function RSEByDesign() {
               </p>
             </div>
           </div>
-          
+
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
             <p>&copy; 2024 RSE by Design. Tous droits réservés.</p>
           </div>

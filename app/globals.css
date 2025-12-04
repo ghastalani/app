@@ -1,24 +1,57 @@
 @import "tailwindcss";
 
+/* Light theme (default) */
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --bg-primary: 255, 255, 255;
+  --bg-secondary: 249, 250, 251;
+  --bg-gradient-start: 236, 253, 245;
+  --bg-gradient-mid: 240, 253, 250;
+  --bg-gradient-end: 236, 254, 255;
+
+  --text-primary: 17, 24, 39;
+  --text-secondary: 75, 85, 99;
+  --text-tertiary: 156, 163, 175;
+
+  --card-bg: 255, 255, 255;
+  --card-border: 229, 231, 235;
+
+  --header-bg: 255, 255, 255;
+  --footer-bg: 17, 24, 39;
+
+  --emerald-primary: 16, 185, 129;
+  --teal-primary: 20, 184, 166;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+/* Dark theme */
+[data-theme="dark"] {
+  --bg-primary: 17, 24, 39;
+  --bg-secondary: 31, 41, 55;
+  --bg-gradient-start: 17, 24, 39;
+  --bg-gradient-mid: 31, 41, 55;
+  --bg-gradient-end: 55, 65, 81;
+
+  --text-primary: 243, 244, 246;
+  --text-secondary: 209, 213, 219;
+  --text-tertiary: 156, 163, 175;
+
+  --card-bg: 31, 41, 55;
+  --card-border: 55, 65, 81;
+
+  --header-bg: 31, 41, 55;
+  --footer-bg: 17, 24, 39;
+
+  --emerald-primary: 52, 211, 153;
+  --teal-primary: 45, 212, 191;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  color: rgb(var(--text-primary));
+  background: linear-gradient(to bottom right,
+      rgb(var(--bg-gradient-start)),
+      rgb(var(--bg-gradient-mid)),
+      rgb(var(--bg-gradient-end)));
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 @layer utilities {
